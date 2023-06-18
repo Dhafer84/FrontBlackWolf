@@ -1,0 +1,44 @@
+<div>
+  <input type="file" (change)="onFileSelected($event)">
+</div>
+
+<div>
+  <label for="titles">Titles:</label>
+  <input type="text" id="titles" name="titles" [(ngModel)]="productData.titles">
+</div>
+
+<div>
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" [(ngModel)]="productData.description"></textarea>
+</div>
+
+<div>
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price" [(ngModel)]="productData.price">
+</div>
+
+<div>
+  <label for="quantityStock">Quantity in Stock:</label>
+  <input type="number" id="quantityStock" name="quantityStock" [(ngModel)]="productData.quantityStock">
+</div>
+
+<div>
+  <label for="categories">Catégories :</label>
+  <select id="categories" [(ngModel)]="productData.categories" name="category" multiple>
+    <option *ngFor="let category of categories" [ngValue]="category._id">{{ category.titles }}</option>
+  </select>
+</div>
+
+<div>
+  <label for="rating">Rating:</label>
+  <input type="number" id="rating" name="rating" [(ngModel)]="productData.rating">
+</div>
+
+<div>
+  <label for="published">Published:</label>
+  <input type="checkbox" id="published" name="published" [(ngModel)]="productData.published">
+</div>
+
+<div>
+  <button (click)="uploadImage()" [disabled]="!selectedFile">Upload Image</button>
+</div>

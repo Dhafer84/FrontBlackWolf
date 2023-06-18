@@ -1,0 +1,15 @@
+<!-- Liste des produits -->
+<div>
+  <h2>Liste des produits</h2>
+  <ul>
+    <li *ngFor="let product of products">
+      <h3>{{ product.titles }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Prix : {{ product.price }}</p>
+      <p>Quantité en stock : {{ product.quantityStock }}</p>
+      <p>Publié : {{ product.published ? 'Oui' : 'Non' }}</p>
+      <p>Catégories : {{ product.categories.join(', ') }}</p>
+      <p>images : {{ product.images.join(', ') }}</p>
+    </li>
+  </ul>
+</div>
